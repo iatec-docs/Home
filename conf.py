@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# IATec Documentation documentation build configuration file, created by
-# sphinx-quickstart on Mon Oct 30 09:30:30 2017.
+# IATec documentation build configuration file, created by
+# sphinx-quickstart on Mon Oct 30 09:41:37 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'IATec Documentation'
+project = u'IATec'
 copyright = u'2017, Andre Guilherme'
 author = u'Andre Guilherme'
 
@@ -111,7 +111,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'IATecDocumentationdoc'
+htmlhelp_basename = 'IATecdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -138,7 +138,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'IATecDocumentation.tex', u'IATec Documentation Documentation',
+    (master_doc, 'IATec.tex', u'IATec Documentation',
      u'Andre Guilherme', 'manual'),
 ]
 
@@ -148,7 +148,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'iatecdocumentation', u'IATec Documentation Documentation',
+    (master_doc, 'iatec', u'IATec Documentation',
      [author], 1)
 ]
 
@@ -159,10 +159,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'IATecDocumentation', u'IATec Documentation Documentation',
-     author, 'IATecDocumentation', 'One line description of project.',
+    (master_doc, 'IATec', u'IATec Documentation',
+     author, 'IATec', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
