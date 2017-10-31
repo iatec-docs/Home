@@ -11,12 +11,9 @@ rtd_version = os.environ.get('READTHEDOCS_VERSION', 'latest')
 if rtd_version not in ['stable', 'latest']:
     rtd_version = 'stable'
 
-if on_rtd:
-    html_theme = 'default'
-else:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 html_logo = 'img/logo.svg'
 html_theme_options = {
