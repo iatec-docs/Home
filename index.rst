@@ -3,18 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to IATec's documentation!
-=================================
+Welcome to IATec Documentation Home!
+################################################################################
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+  :caption: Projects
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+  IATec Authentication <http://docs.iatec.com/projects/auth/en/latest/>
