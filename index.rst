@@ -10,3 +10,8 @@ Welcome to IATec Documentation Home!
   :caption: Projects
 
   IATec Authentication <http://docs.iatec.com/projects/auth/en/latest/>
+
+.. toctree::
+  :caption: APIs
+
+  Accounts API <http://docs.iatec.com/apis/accounts.html>
