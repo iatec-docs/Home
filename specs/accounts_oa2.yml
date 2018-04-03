@@ -4,16 +4,14 @@ info:
   description: |-
     API for accessing the Accounts subsystem.
     For internal use only.
+  host: 'https://ws-accounts-ho.sdasystems.org'
+  basepath: '/v3'
   version: 3.0.0
   contact:
     name: Andre Guilherme
     email: andre.guilherme@iatec.com
   x-logo:
-    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=e901f249-bac1-43c7-aba0-47094fea18fd'
-    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=603C7665-D03D-4B47-AF97-98E929ADB0D1'
-    url: 'https://applications-dev.sdasystems.org/1002/Handlers/ImageLogo.ashx?id=D7EC8D1C-B72D-4F08-B5DB-F7259468E7A8'
-    host: 'https://ws-accounts-ho.sdasystems.org'
-    basepath: '/v3'
+    url: 'https://raw.githubusercontent.com/iatec-docs/Home/master/img/logo_accounts.png'
 security:
   - client_credentials:
       - user.management
