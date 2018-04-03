@@ -14,4 +14,4 @@ Welcome to IATec Documentation Home!
 .. toctree::
   :caption: APIs
 
-  Accounts API <http://docs.iatec.com/apis/accounts.html>
+  Accounts API <apis/accounts.html#://>

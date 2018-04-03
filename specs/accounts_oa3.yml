@@ -271,7 +271,6 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
         description: The user to create
-      parameters: []
   /_meta/version:
     get:
       tags:
@@ -281,13 +280,47 @@ paths:
       description: Get version number
       responses:
         '200':
-          description: Users found
+          description: "Success"
           content:
             application/json:
               schema:
                 type: string
-      parameters: []
-components:
+  /_meta/version:
+    get:
+      tags:
+        - metadata
+      operationId: getEnvironmentName
+      summary: Get environment name
+      description: Get environment name
+      responses:
+        '200':
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: string
+  /_meta/version:
+    get:
+      tags:
+        - metadata
+      operationId: getEnvironmentName
+      summary: Get environment name
+      description: Get environment name
+      responses:
+        '200':
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+                    description: "Application version number"
+                  environment:
+                    type: string
+                    description: "Server environment name"
+components:     
   requestBodies:
     UserInsert:
       content:

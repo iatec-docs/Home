@@ -302,9 +302,45 @@ paths:
         - application/json
       responses:
         '200':
-          description: Users found
+          description: "Success"
           schema:
             type: string
+  /_meta/environment:
+    get:
+      tags:
+        - metadata
+      operationId: getEnvironmentName
+      summary: Get environment name
+      description: Get environment name
+      consumes:
+        - application/json
+      responses:
+        '200':
+          description: "Success"
+          schema:
+            type: string
+  /_meta:
+    get:
+      tags:
+        - metadata
+      operationId: getMetadata
+      summary: Get application metadata
+      description: Get application metadata
+      consumes:
+        - application/json
+      responses:
+        '200':
+          description: "Success"
+          schema:
+            type: object
+            properties:
+              version:
+                type: string
+                description: "Application version number"
+              environment:
+                type: string
+                description: "Server environment name"
+              
 definitions:
   User:
     type: object
