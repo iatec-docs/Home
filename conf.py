@@ -161,6 +161,6 @@ redoc = [
     {
         'name': 'Accounts API',
         'page': 'apis/accounts',
-        'spec': 'specs/accounts.yaml',
+        'spec': 'specs/accounts_oa2.yml',
     },
 ]

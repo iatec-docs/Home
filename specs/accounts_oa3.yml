@@ -14,13 +14,16 @@ info:
   contact:
     name: Andre Guilherme
     email: andre.guilherme@iatec.com
-    url: ''
+  x-logo:
+    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=e901f249-bac1-43c7-aba0-47094fea18fd'
+    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=603C7665-D03D-4B47-AF97-98E929ADB0D1'
+    url: 'https://applications-dev.sdasystems.org/1002/Handlers/ImageLogo.ashx?id=D7EC8D1C-B72D-4F08-B5DB-F7259468E7A8'
 security:
   - client_credentials:
       - user.management
-tags: 
+tags:
   - name: user
-    description: Invitation-related operations
+    description: User management operations
 paths:
   '/users/{id}/password':
     put:
@@ -39,10 +42,19 @@ paths:
       parameters:
         - in: path
           name: id
+          description: "The IATec Accounts' User ID"
           required: true
-          type: string
-          format: uuid
+          schema:
+            type: string
+            format: uuid
   '/users/by-username/{username}/password':
+    parameters:
+      - in: path
+        name: username
+        description: 'The username to find the user'
+        required: true
+        schema:
+          type: string
     put:
       tags:
         - user
@@ -56,12 +68,14 @@ paths:
           description: User not found
       requestBody:
         $ref: '#/components/requestBodies/changeUserPasswordById'
-      parameters:
-        - in: path
-          name: username
-          required: true
-          type: string
   '/users/by-email/{email}/password':
+    parameters:
+      - in: path
+        name: email
+        description: 'The email to find the user'
+        required: true
+        schema:
+          type: string
     put:
       tags:
         - user
@@ -75,13 +89,16 @@ paths:
           description: User not found
       requestBody:
         $ref: '#/components/requestBodies/changeUserPasswordById'
-      parameters:
-        - in: path
-          name: email
-          required: true
-          type: string
   '/users/{id}':
     get:
+      parameters:
+      - in: path
+        name: id
+        description: The id of the user
+        required: true
+        schema:
+          type: string
+          format: uuid
       tags:
         - user
       operationId: getUserById
@@ -96,13 +113,6 @@ paths:
                 $ref: '#/components/schemas/User'
         '404':
           description: User not found
-      parameters:
-        - in: path
-          name: id
-          description: The id of the user
-          required: true
-          type: string
-          format: uuid
     put:
       tags:
         - user
@@ -118,14 +128,7 @@ paths:
                 $ref: '#/components/schemas/User'
       requestBody:
         $ref: '#/components/requestBodies/UserInsert'
-      parameters:
-        - in: path
-          name: id
-          description: The id of the user
-          required: true
-          type: string
-          format: uuid
-  '/users/by-username/{id}':
+  '/users/by-username/{username}':
     get:
       tags:
         - user
@@ -146,7 +149,8 @@ paths:
           name: username
           description: The username of the user
           required: true
-          type: string
+          schema:
+            type: string
     put:
       tags:
         - user
@@ -167,8 +171,9 @@ paths:
           name: username
           description: The username of the user
           required: true
-          type: string
-  '/users/by-email/{id}':
+          schema:
+            type: string
+  '/users/by-email/{email}':
     get:
       tags:
         - user
@@ -189,7 +194,8 @@ paths:
           name: email
           description: The email of the user
           required: true
-          type: string
+          schema:
+            type: string
     put:
       tags:
         - user
@@ -210,7 +216,8 @@ paths:
           name: email
           description: The email of the user
           required: true
-          type: string
+          schema:
+            type: string
   /users:
     get:
       tags:
@@ -223,17 +230,20 @@ paths:
           name: filter
           description: A filter for matching the users
           required: false
-          type: string
+          schema:
+            type: string
         - in: query
           name: limit
           description: The maximum number of records to bring.
           required: false
-          type: integer
+          schema:
+            type: integer
         - in: query
           name: offset
           description: The number of records to skip. Used for pagination.
           required: false
-          type: integer
+          schema:
+            type: integer
       responses:
         '200':
           description: Users found
@@ -253,7 +263,8 @@ paths:
           headers:
             Location:
               description: The url where the created user can be found
-              type: string
+              schema:
+                type: string
       requestBody:
         content:
           application/json:

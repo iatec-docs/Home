@@ -1,0 +1,350 @@
+swagger: "2.0"
+info:
+  title: Accounts Api
+  description: |-
+    API for accessing the Accounts subsystem.
+    For internal use only.
+  version: 3.0.0
+  contact:
+    name: Andre Guilherme
+    email: andre.guilherme@iatec.com
+  x-logo:
+    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=e901f249-bac1-43c7-aba0-47094fea18fd'
+    #url: 'https://sad-us-fm-1.apps.live.ws.sdasystems.org/app/Handlers/ImageLogo.ashx?id=603C7665-D03D-4B47-AF97-98E929ADB0D1'
+    url: 'https://applications-dev.sdasystems.org/1002/Handlers/ImageLogo.ashx?id=D7EC8D1C-B72D-4F08-B5DB-F7259468E7A8'
+    host: 'https://ws-accounts-ho.sdasystems.org'
+    basepath: '/v3'
+security:
+  - client_credentials:
+      - user.management
+securityDefinitions:
+  client_credentials:
+    type: oauth2
+    description: Generates a token via the Client Credentials flow.
+    flow: application
+    tokenUrl: 'https://login-ho.sdasystems.org/connect/token'
+    scopes:
+      accounts.management: Accounts Management API
+tags:
+  - name: user
+    description: User management operations
+paths:
+  '/users/{id}/password':
+    parameters:
+      - in: path
+        name: id
+        description: "The IATec Accounts' User ID"
+        required: true
+        type: string
+        format: uuid
+    put:
+      tags:
+        - user
+      operationId: changeUserPasswordById
+      summary: Change user password by id
+      description: Change user password by id
+      responses:
+        '204':
+          description: Password updated
+        '404':
+          description: User not found
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: password
+          description: The new user password
+          type: string
+  '/users/by-username/{username}/password':
+    parameters:
+      - in: path
+        name: username
+        description: 'The username to find the user'
+        required: true
+        type: string
+    put:
+      tags:
+        - user
+      operationId: resetUserPasswordByUsername
+      summary: Reset user password by username
+      description: Reset user password by username
+      responses:
+        '204':
+          description: Password updated
+        '404':
+          description: User not found
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: password
+          description: The new user password
+          type: string
+  '/users/by-email/{email}/password':
+    parameters:
+      - in: path
+        name: email
+        description: 'The email to find the user'
+        required: true
+        type: string
+    put:
+      tags:
+        - user
+      operationId: resetUserPasswordByEmail
+      summary: Reset user password by email
+      description: Reset user password by email
+      responses:
+        '204':
+          description: Password updated
+        '404':
+          description: User not found
+      consumes:
+        - application/x-www-form-urlencoded
+      parameters:
+        - in: formData
+          name: password
+          description: The new user password
+          type: string
+  '/users/{id}':
+    parameters:
+      - in: path
+        name: id
+        description: "The IATec Accounts' User ID"
+        required: true
+        type: string
+        format: uuid
+    get:
+      parameters:
+      - in: path
+        name: id
+        description: The id of the user
+        required: true
+        type: string
+        format: uuid
+      tags:
+        - user
+      operationId: getUserById
+      summary: Get a user
+      description: Get a user by id
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User found
+          schema:
+            $ref: '#/definitions/User'
+        '404':
+          description: User not found
+    put:
+      tags:
+        - user
+      operationId: updateUserById
+      summary: Update user by id
+      description: Update a user by id
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User inserted or updated
+          schema:
+            $ref: '#/definitions/User'
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserInsert'
+          description: The user info
+
+  '/users/by-username/{username}':
+    parameters:
+      - in: path
+        name: username
+        description: The username of the user
+        required: true
+        type: string  
+    get:
+      tags:
+        - user
+      operationId: getUserByUsername
+      summary: Get a user
+      description: Get a user by username
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User found
+          schema:
+            $ref: '#/definitions/User'
+        '404':
+          description: User not found
+    put:
+      tags:
+        - user
+      operationId: updateUserByUsername
+      summary: Update user by username
+      description: Update a user by username
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User inserted or updated
+          schema:
+            $ref: '#/definitions/User'
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserInsert'
+          description: The user info
+
+  '/users/by-email/{email}':
+    parameters:
+      - in: path
+        name: email
+        description: The email of the user
+        required: true
+        type: string
+    get:
+      tags:
+        - user
+      operationId: getUserByEmail
+      summary: Get a user
+      description: Get a user by email
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User found
+          schema:
+            $ref: '#/definitions/User'
+        '404':
+          description: User not found
+
+    put:
+      tags:
+        - user
+      operationId: updateUserByEmail
+      summary: Update user by email
+      description: Update a user by email
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User inserted or updated
+          schema:
+            $ref: '#/definitions/User'
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/UserInsert'
+          description: The user info
+
+  '/users':
+    get:
+      tags:
+        - user
+      operationId: getUsers
+      summary: Get many users
+      description: Get many users by an optional filter
+      parameters:
+        - in: query
+          name: filter
+          description: A filter for matching the users
+          required: false
+          type: string
+        - in: query
+          name: limit
+          description: The maximum number of records to bring.
+          required: false
+          type: integer
+        - in: query
+          name: offset
+          description: The number of records to skip. Used for pagination.
+          required: false
+          type: integer
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Users found
+          schema:
+            $ref: '#/definitions/PagedUsers'
+    post:
+      tags:
+        - user
+      operationId: createUser
+      summary: Create user
+      description: Create a user
+      responses:
+        '201':
+          description: User created
+          headers:
+            Location:
+              description: The url where the created user can be found
+              type: string
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/User'
+          description: The user to create
+  /_meta/version:
+    get:
+      tags:
+        - metadata
+      operationId: getVersionNumber
+      summary: Get version
+      description: Get version number
+      consumes:
+        - application/json
+      responses:
+        '200':
+          description: Users found
+          schema:
+            type: string
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      username:
+        type: string
+      email:
+        type: string
+        format: email
+      created_at:
+        type: string
+        format: date-time
+  UserInsert:
+    type: object
+    properties:
+      email:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+  PagedUsers:
+    type: object
+    properties:
+      count:
+        type: integer
+      start:
+        type: integer
+      total:
+        type: integer
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+  links: {}
+  callbacks: {}
