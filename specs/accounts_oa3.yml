@@ -283,7 +283,7 @@ paths:
             application/json:
               schema:
                 type: string
-  /_meta/version:
+  /_meta/environment:
     get:
       tags:
         - metadata
