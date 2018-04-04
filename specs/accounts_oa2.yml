@@ -1,5 +1,6 @@
 swagger: "2.0"
 host: 'ws-accounts-ho.sdasystems.org'
+schemes: [https]
 basePath: '/'
 info:
   version: 3.0.0
