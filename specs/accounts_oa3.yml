@@ -1,9 +1,9 @@
 openapi: 3.0.0
 servers:
-  - url: 'https://ws-accounts-ho.sdasystems.org/v3'
+  - url: 'https://ws-accounts-ho.sdasystems.org/'
     description: Homologation
     variables: {}
-  - url: 'https://ws-accounts.sdasystems.org/v3'
+  - url: 'https://ws-accounts.sdasystems.org/'
     description: Production
 info:
   title: Accounts Api
