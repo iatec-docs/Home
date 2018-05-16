@@ -15,3 +15,4 @@ Welcome to IATec Documentation Home!
   :caption: APIs
 
   Accounts API <apis/accounts.html#://>
+  People Management API <apis/peoplemgmt.html#://>

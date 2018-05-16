@@ -163,4 +163,9 @@ redoc = [
         'page': 'apis/accounts',
         'spec': 'specs/accounts_oa2.yml',
     },
+	{
+        'name': 'PeopleMgmt API',
+        'page': 'apis/peoplemgmt',
+        'spec': 'specs/peoplemgmt_oa2.yml',
+    },
 ]
