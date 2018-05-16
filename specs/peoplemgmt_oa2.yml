@@ -90,6 +90,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -184,6 +185,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -302,6 +304,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -569,6 +572,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -698,6 +702,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -814,6 +819,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -877,6 +883,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -901,6 +908,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1115,6 +1123,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1178,6 +1187,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1430,6 +1440,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1529,6 +1540,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: legalEntityIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1622,6 +1634,7 @@ paths:
             type: string
           required: false
         - name: documentTypeIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1646,6 +1659,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1775,6 +1789,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: legalEntityIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1809,6 +1824,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: legalEntityIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -1880,6 +1896,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2209,6 +2226,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2313,6 +2331,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2442,6 +2461,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2471,6 +2491,7 @@ paths:
           format: uuid
           required: true
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2574,6 +2595,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2603,6 +2625,7 @@ paths:
           format: uuid
           required: true
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2706,6 +2729,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2735,6 +2759,7 @@ paths:
           format: uuid
           required: true
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2832,6 +2857,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2861,6 +2887,7 @@ paths:
           format: uuid
           required: true
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -2958,6 +2985,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3043,6 +3071,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3202,6 +3231,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3231,6 +3261,7 @@ paths:
             $ref: '#/definitions/Relationship'
           required: true
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3255,6 +3286,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3279,6 +3311,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3343,6 +3376,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3413,6 +3447,7 @@ paths:
             type: string
           required: false
         - name: documentTypeIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3682,6 +3717,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3700,6 +3736,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: naturalPersonIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3798,6 +3835,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3938,6 +3976,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -3998,6 +4037,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4027,6 +4067,7 @@ paths:
           format: uuid
           required: true
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4106,6 +4147,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4200,6 +4242,7 @@ paths:
           format: uuid
           required: true
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4279,6 +4322,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4326,6 +4370,7 @@ paths:
             $ref: '#/definitions/ContactType'
           required: true
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4431,6 +4476,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4496,6 +4542,7 @@ paths:
           format: uuid
           required: true
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4520,6 +4567,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: personIdList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4583,6 +4631,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4677,6 +4726,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
@@ -4784,6 +4834,7 @@ paths:
         - 'applications/xml'
       parameters:
         - name: idList
+          collectionFormat: multi
           in: query
           type: array
           items:
