@@ -201,39 +201,6 @@ paths:
               $ref: '#/definitions/AllergyType'
 
 
-  '/authentication/setToken':
-    post:
-      tags: ['Authentication']
-      operationId: 'setToken'
-      produces:
-        - 'applications/json'
-        - 'applications/xml'
-      parameters:
-        - name: cert
-          in: query
-          type: string
-          required: false
-      responses:
-        204:
-          description: 'Done'
-  '/authentication/startSession':
-    post:
-      tags: ['Authentication']
-      operationId: 'startSession'
-      produces:
-        - 'applications/json'
-        - 'applications/xml'
-      parameters:
-        - name: tokenKey
-          in: query
-          type: string
-          required: false
-      responses:
-        200:
-          description: 'Success'
-          schema:
-            type: string
-
   '/country/systemReference':
     delete:
       tags: ['Country']
