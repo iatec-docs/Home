@@ -32,7 +32,6 @@ intersphinx_mapping = {
 # -- General configuration ------------------------------------------------
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinxcontrib.redoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -155,17 +154,3 @@ texinfo_documents = [
 rst_epilog = """
 .. |project_name| replace:: %s
 """ % (project)
-
-
-redoc = [
-    {
-        'name': 'Accounts API',
-        'page': 'apis/accounts',
-        'spec': 'specs/accounts_oa2.yml',
-    },
-	{
-        'name': 'PeopleMgmt API',
-        'page': 'apis/peoplemgmt',
-        'spec': 'specs/peoplemgmt_oa2.yml',
-    },
-]

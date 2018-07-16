@@ -14,5 +14,5 @@ Welcome to IATec Documentation Home!
 .. toctree::
   :caption: APIs
 
-  Accounts API <apis/accounts.html#://>
-  People Management API <apis/peoplemgmt.html#://>
+  Accounts API <https://iatecaccounts.docs.apiary.io/>
+  People Management API <https://iatecpeoplemgmt.docs.apiary.io/>
